@@ -15,7 +15,7 @@ const usePokemonList = () => {
     return response.data;
   };
 
-  const { data: pokemonReponse, isLoading: isLoading } = useQuery(
+  const { data: pokemonReponse, isLoading } = useQuery(
     ["getPokemon", offset],
     () => getPokemon()
   );
