@@ -20,15 +20,18 @@ const PokemonPaginationText = ({
 interface IPokemonPaginationProps {
   handleNext: () => void;
   handlePrevious: () => void;
+  page: number;
 }
 
 const PokemonPagination = ({
   handleNext,
   handlePrevious,
+  page
 }: IPokemonPaginationProps) => {
   return (
     <div className="flex justify-between items-center">
       <PokemonPaginationText text="Previous 12" onClick={handlePrevious} />
+      <span>Page {page}</span>
       <PokemonPaginationText text="Next 12" onClick={handleNext} />
     </div>
   );

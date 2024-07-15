@@ -22,7 +22,8 @@ const PokemonCard = ({ pokemon }: IPokemonNameCardProps) => {
               className="w-[full] h-full p-1"
             />
           </div>
-          <p className="text-xl text-neutral-shades-50">
+          {/* Add whitespace no warp */}
+          <p className="text-xl text-neutral-shades-50 whitespace-nowrap">
             {pokemon.name}
           </p>
         </>

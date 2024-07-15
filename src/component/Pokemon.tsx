@@ -10,20 +10,20 @@ interface IPokemonProps {
 }
 
 const Pokemon = ({ sortBy }: IPokemonProps) => {
-  const { pokemonList, isLoading, handleNext, handlePrevious } = usePokemonList();
+  const { pokemonList, isLoading, handleNext, handlePrevious, page } = usePokemonList();
 
   return (
     <div className="mt-6">
       {isLoading ? (
         <LoadingLayout />
       ) : (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {pokemonSorted(pokemonList, sortBy).map((pokemon) => (
             <PokemonCard key={pokemon.name} pokemon={pokemon} />
           ))}
         </div>
       )}
-      <PokemonPagination handleNext={handleNext} handlePrevious={handlePrevious} />
+      <PokemonPagination handleNext={handleNext} handlePrevious={handlePrevious} page={page} />
     </div>
   );
 };
