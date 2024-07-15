@@ -22,7 +22,7 @@ const PokemonCard = ({ pokemon }: IPokemonNameCardProps) => {
               className="w-[full] h-full p-1"
             />
           </div>
-          <p className="text-xl capitalize text-neutral-shades-50">
+          <p className="text-xl text-neutral-shades-50">
             {pokemon.name}
           </p>
         </>
