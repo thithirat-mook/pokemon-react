@@ -10,7 +10,8 @@ const PokemonCard = ({ pokemon }: IPokemonNameCardProps) => {
   const { pokemonDetail, isLoading } = usePokemonCard(pokemon.url);
 
   return (
-    <div className="h-[106px] flex items-center gap-3 p-4 bg-white rounded-lg border border-neutral-shades-30">
+    // Remove h-[106px]
+    <div className="flex items-center gap-3 p-4 bg-white rounded-lg border border-neutral-shades-30">
       {isLoading ? (
         <LoadingLayout />
       ) : (
