@@ -1,16 +1,22 @@
 interface IPokemonPaginationTextProps {
   text: string;
   onClick: () => void;
+  disabled?: boolean;
 }
 
 const PokemonPaginationText = ({
+  disabled = false,
   text,
   onClick,
 }: IPokemonPaginationTextProps) => {
   return (
     <span
-      className="px-3 py-2 text-primary font-roboto cursor-pointer"
-      onClick={onClick}
+      className={`px-3 py-2 font-roboto ${
+        disabled
+          ? "cursor-not-allowed text-[#64748b]"
+          : "cursor-pointer text-primary"
+      }`}
+      onClick={onClick} 
     >
       {text}
     </span>
@@ -26,11 +32,15 @@ interface IPokemonPaginationProps {
 const PokemonPagination = ({
   handleNext,
   handlePrevious,
-  page
+  page,
 }: IPokemonPaginationProps) => {
   return (
-    <div className="flex justify-between items-center">
-      <PokemonPaginationText text="Previous 12" onClick={handlePrevious} />
+    <div className="flex justify-between items-center py-2 mb-4">
+      <PokemonPaginationText
+        text="Previous 12"
+        onClick={handlePrevious}
+        disabled={page === 1}
+      />
       <span>Page {page}</span>
       <PokemonPaginationText text="Next 12" onClick={handleNext} />
     </div>
