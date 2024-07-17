@@ -29,7 +29,7 @@ const PokemonPagination = ({
   page
 }: IPokemonPaginationProps) => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center py-2 mb-4">
       <PokemonPaginationText text="Previous 12" onClick={handlePrevious} />
       <span>Page {page}</span>
       <PokemonPaginationText text="Next 12" onClick={handleNext} />
