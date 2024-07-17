@@ -17,7 +17,7 @@ const Pokemon = ({ sortBy }: IPokemonProps) => {
       {isLoading ? (
         <LoadingLayout />
       ) : (
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {pokemonSorted(pokemonList, sortBy).map((pokemon) => (
             <PokemonCard key={pokemon.name} pokemon={pokemon} />
           ))}

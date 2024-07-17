@@ -20,7 +20,7 @@ const usePokemonList = () => {
     () => getPokemon()
   );
 
-  const page = (offset / 12) + 1;
+  const page = (offset / 12);
 
   const handleNext = () => {
     setOffset((prevValue) => {
@@ -35,10 +35,9 @@ const usePokemonList = () => {
   const handlePrevious = () => {
     setOffset((prevValue) => {
       let newOffset = prevValue - LIMIT;
-      // Commented check pagination page
-      // if (newOffset <= OFFSET) {
-      //   newOffset = OFFSET;
-      // }
+      if (newOffset <= OFFSET) {
+        newOffset = OFFSET;
+      }
       return newOffset;
     });
   };
