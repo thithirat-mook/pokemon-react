@@ -10,9 +10,9 @@ interface IRadioFieldProps {
 const RadioField = ({ text, name, sortBy, setSortBy }: IRadioFieldProps) => {
   const isChecked = sortBy === name;
   return (
-    <div className="flex gap-2 p-2 pr-4" onClick={() => setSortBy(name)}>
+    <div className="cursor-pointer flex gap-2 p-2 pr-4" onClick={() => setSortBy(name)}>
       <input readOnly type="radio" className="accent-primary" checked={isChecked} />
-      <label className="font-roboto border-neutral-shades-30 text-xl">{text}</label>
+      <label className="cursor-pointer font-roboto border-neutral-shades-30 text-xl">{text}</label>
     </div>
   );
 };
