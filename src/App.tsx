@@ -7,7 +7,7 @@ function App() {
   const [sortBy, setSortBy] = React.useState<SortByEnum>(SortByEnum.id);
 
   return (
-    <div className="h-screen w-screen bg-page-background p-6">
+    <div className="h-screen w-screen bg-page-background p-12">
       <Header sortBy={sortBy} setSortBy={setSortBy} />
       <Pokemon sortBy={sortBy} />
     </div>

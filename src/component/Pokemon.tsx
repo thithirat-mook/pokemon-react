@@ -10,20 +10,25 @@ interface IPokemonProps {
 }
 
 const Pokemon = ({ sortBy }: IPokemonProps) => {
-  const { pokemonList, isLoading, handleNext, handlePrevious, page } = usePokemonList();
+  const { pokemonList, isLoading, handleNext, handlePrevious, page } =
+    usePokemonList();
+
+  if (isLoading) {
+    return <LoadingLayout />;
+  }
 
   return (
-    <div className="mt-6">
-      {isLoading ? (
-        <LoadingLayout />
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {pokemonSorted(pokemonList, sortBy).map((pokemon) => (
-            <PokemonCard key={pokemon.name} pokemon={pokemon} />
-          ))}
-        </div>
-      )}
-      <PokemonPagination handleNext={handleNext} handlePrevious={handlePrevious} page={page} />
+    <div className="flex flex-col justify-between h-[calc(100%-16px)] mt-4 pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+        {pokemonSorted(pokemonList, sortBy).map((pokemon) => (
+          <PokemonCard key={pokemon.name} pokemon={pokemon} />
+        ))}
+      </div>
+      <PokemonPagination
+        handleNext={handleNext}
+        handlePrevious={handlePrevious}
+        page={page}
+      />
     </div>
   );
 };

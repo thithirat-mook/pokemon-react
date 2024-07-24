@@ -8,7 +8,7 @@ interface IHeaderProps {
 
 const Header = ({ sortBy, setSortBy }: IHeaderProps) => {
   return (
-    <div className="flex flex-col md:flex-row md:justify-between md:items-center mt-12">
+    <div className="flex flex-col md:flex-row md:justify-between md:items-center">
       <h1 className="font-encode text-[32px]">All the Pokemon!</h1>
       <div className="flex items-center">
         <RadioField
