@@ -41,7 +41,7 @@ const PokemonPagination = ({
         onClick={handlePrevious}
         disabled={page === 1}
       />
-      <span>Page {page}</span>
+      {/* <span>Page {page}</span> */}
       <PokemonPaginationText text="Next 12" onClick={handleNext} />
     </div>
   );
