@@ -11,7 +11,7 @@ interface IPokemonProps {
 
 const Pokemon = ({ sortBy }: IPokemonProps) => {
   const { pokemonList, isLoading, handleNext, handlePrevious, page } =
-    usePokemonList();
+    usePokemonList({ sortBy });
 
   if (isLoading) {
     return <LoadingLayout />;
@@ -20,7 +20,7 @@ const Pokemon = ({ sortBy }: IPokemonProps) => {
   return (
     <div className="flex flex-col justify-between h-[calc(100%-16px)] mt-4 pb-12">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-        {pokemonSorted(pokemonList, sortBy).map((pokemon) => (
+        {pokemonList.map((pokemon) => (
           <PokemonCard key={pokemon.name} pokemon={pokemon} />
         ))}
       </div>
