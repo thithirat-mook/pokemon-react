@@ -1,6 +1,5 @@
 import usePokemonList from "../hook/usePokemonList";
 import { SortByEnum } from "../type/main";
-import { pokemonSorted } from "../utils/sort";
 import LoadingLayout from "./LoadingLayout";
 import PokemonCard from "./PokemonCard";
 import PokemonPagination from "./PokemonPagination";
