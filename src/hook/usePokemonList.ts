@@ -60,7 +60,7 @@ const usePokemonList = ({ sortBy }: IPokemonProps) => {
   useEffect(() => {
     handleSortBy()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sortBy])
+  }, [sortBy, pokemonReponse])
 
   return {
     pokemonList: currentItems ?? [],
