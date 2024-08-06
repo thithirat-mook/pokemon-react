@@ -45,7 +45,7 @@ const usePokemonList = ({ sortBy }: IPokemonProps) => {
     }
   };
 
-  useEffect(() => {
+  const handleSortBy = () => {
     if (sortBy === SortByEnum.name) {
       const finalData = sortedData?.slice().sort(function (a, b) {
         return a.name.localeCompare(b.name);
@@ -55,7 +55,11 @@ const usePokemonList = ({ sortBy }: IPokemonProps) => {
       setSortedData(pokemonReponse?.results.slice());
     }
     setCurrentPage(1);
-  }, [sortBy, pokemonReponse?.results, sortedData])
+  }
+
+  useEffect(() => {
+    handleSortBy()
+  }, [sortBy])
 
   return {
     pokemonList: currentItems ?? [],
