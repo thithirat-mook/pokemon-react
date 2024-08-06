@@ -55,7 +55,7 @@ const usePokemonList = ({ sortBy }: IPokemonProps) => {
       setSortedData(pokemonReponse?.results.slice());
     }
     setCurrentPage(1);
-  }, [sortBy])
+  }, [sortBy, pokemonReponse?.results, sortedData])
 
   return {
     pokemonList: currentItems ?? [],
