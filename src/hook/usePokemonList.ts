@@ -5,7 +5,7 @@ import axios from "axios";
 import { SortByEnum } from "../type/main";
 
 const OFFSET = 12;
-const LIMIT = 120;
+const LIMIT = 2000;
 
 interface IPokemonProps {
   sortBy: SortByEnum;
