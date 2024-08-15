@@ -14,7 +14,8 @@ module.exports = {
       'page-background': '#F6F6F7',
       'sprite-background': '#00000012',
       'neutral-shades-30': '#E3E1E5',
-      'nertral-shades-50': '#23292B',
+      'neutral-shades-50': '#23292B',
+      'primary-text-color': '#363545',
     }
   },
   plugins: [],
